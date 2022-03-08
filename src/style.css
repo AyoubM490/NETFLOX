@@ -17,7 +17,16 @@ header {
   height: 80px;
   display: flex;
   justify-content: space-between;
-  background: grey;
+  background: #08d9d6;
   align-items: center;
   padding: 20px 40px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  padding: 10px 40px;
+  background-color: #08d9d6;
 }
