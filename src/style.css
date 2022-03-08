@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+}
+
+header {
+  width: 100%;
+}
+
+.top-nav {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  background: grey;
+  align-items: center;
+  padding: 20px 40px;
+}
