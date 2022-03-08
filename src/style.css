@@ -1,0 +1,21 @@
+body {
+    position: relative;
+}
+
+/* .header {
+
+} */
+
+.top-nav {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+background: grey;
+padding: 20px 40px;
+align-items: center;
+}
+
+
