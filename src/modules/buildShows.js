@@ -2,7 +2,7 @@ const buildShows = (showsList, container) => {
   for (let i = 0; i <= showsList.length - 1; i += 1) {
     const itemContainer = document.createElement('div');
     itemContainer.id = `movie${showsList[i].id}`;
-
+    itemContainer.setAttribute("item", `${showsList[i].id}`)
     const img = document.createElement('img');
     img.src = showsList[i].image.medium;
     img.style.width = '20rem';
