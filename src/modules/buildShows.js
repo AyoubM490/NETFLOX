@@ -25,7 +25,7 @@ const buildShows = (showsList, container) => {
     itemContainer.appendChild(titleLike);
 
     const commentBtn = document.createElement('div');
-    commentBtn.innerHTML = '<button>Comment</button>';
+    commentBtn.innerHTML = `<button class="comment-btn" item="${showsList[i].id}">Comment</button>`;
     itemContainer.appendChild(commentBtn);
 
     container.appendChild(itemContainer);
