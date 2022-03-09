@@ -12,21 +12,21 @@ const starRating = (stars, post, id) => {
   stars.onclick = async (e) => {
     e.preventDefault();
     const inputSelector = document.querySelector(
-      `#${e.target.getAttribute("for")}`
+      `#${e.target.getAttribute('for')}`,
     );
     inputSelector.checked = true;
-    saveStars(id, e.target.getAttribute("for"));
+    saveStars(id, e.target.getAttribute('for'));
 
     await setTimeout(() => {
-      stars.style.display = "none";
+      stars.style.display = 'none';
     }, 500);
     setTimeout(() => {
-      post.style.display = "block";
+      post.style.display = 'block';
     }, 500);
 
     setTimeout(() => {
-      stars.style.display = "block";
-      post.style.display = "none";
+      stars.style.display = 'block';
+      post.style.display = 'none';
     }, 2000);
   };
 };

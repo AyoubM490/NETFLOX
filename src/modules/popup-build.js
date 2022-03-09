@@ -1,11 +1,11 @@
-import { starRating, getStars } from "./user-star-rating";
+import { starRating, getStars } from './user-star-rating.js';
 
 const insertPopup = (popupContainer, modalContainer, dataArray, index) => {
-  modalContainer.innerHTML = "";
+  modalContainer.innerHTML = '';
   const dataElement = dataArray[index - 1];
-  const modal = document.createElement("ul");
-  modal.classList.add("item-container");
-  modal.setAttribute("item", `${index}`);
+  const modal = document.createElement('ul');
+  modal.classList.add('item-container');
+  modal.setAttribute('item', `${index}`);
   modal.innerHTML = `<li class="item-description-container">
     <ul class="item-description">
       <li class="company-likes-container">
@@ -18,8 +18,8 @@ const insertPopup = (popupContainer, modalContainer, dataArray, index) => {
         </ul>
       </li>
       <li class="item-title"><a href="${dataElement.url}">${
-    dataElement.name
-  }</a> </li>
+  dataElement.name
+}</a> </li>
       <li class="item-genres-container">
         <ul class="item-genres">
         </ul>
@@ -28,13 +28,13 @@ const insertPopup = (popupContainer, modalContainer, dataArray, index) => {
         <ul class="item-details">
           <li class="started">Premiered: ${dataElement.premiered}</li>
           <li class="status">${dataElement.status} ${
-    dataElement.status === "Ended" ? `: ${dataElement.ended}` : ""
-  }</li>
+  dataElement.status === 'Ended' ? `: ${dataElement.ended}` : ''
+}</li>
         </ul>
         <ul class="rating-container">
             <li class="item-rating"><span class="imdb">IMDB: </span><span>(${
-              dataElement.rating.average / 2
-            }<i class="fas fa-star"></i>)</span></li>
+  dataElement.rating.average / 2
+}<i class="fas fa-star"></i>)</span></li>
             <li class="user-rating">
               <div class="star-rating">
                 <div class="post">
@@ -68,18 +68,17 @@ const insertPopup = (popupContainer, modalContainer, dataArray, index) => {
       alt="show-poster"
     />
   </li>`;
-  const genresContainner = document.querySelector(".item-genres");
-  () => {
-    const genres = dataElement.genres;
-    genres.forEach((element) => {
-      genresContainner.innerHTML += `<li class="genre">${element}</li>`;
-    });
-  };
-  modalContainer.appendChild(modal);
-  popupContainer.style.display = "block";
+  const genresContainner = document.querySelector('.item-genres');
 
-  const stars = document.querySelector(".stars-container");
-  const post = document.querySelector(".post");
+  dataElement.genres.forEach((element) => {
+    genresContainner.innerHTML += `<li class="genre">${element}</li>`;
+  });
+
+  modalContainer.appendChild(modal);
+  popupContainer.style.display = 'block';
+
+  const stars = document.querySelector('.stars-container');
+  const post = document.querySelector('.post');
   if (localStorage.getItem(index)) {
     const selectedStar = document.querySelector(`#${getStars(index)}`);
     selectedStar.checked = true;
