@@ -136,7 +136,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_reset_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css-reset.css */ \"./src/css-reset.css\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_getShows_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/getShows.js */ \"./src/modules/getShows.js\");\n/* harmony import */ var _modules_buildShows_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/buildShows.js */ \"./src/modules/buildShows.js\");\n\n\n\n\n\nconst items = document.querySelector('.items');\n\nwindow.addEventListener('DOMContentLoaded', async () => {\n  const shows = await (0,_modules_getShows_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n  const sixShows = shows.slice(0, 6);\n\n  (0,_modules_buildShows_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(sixShows, items);\n});\n\n\n//# sourceURL=webpack://leaderboard-api/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_reset_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css-reset.css */ \"./src/css-reset.css\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_getShows_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/getShows.js */ \"./src/modules/getShows.js\");\n/* harmony import */ var _modules_buildShows_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/buildShows.js */ \"./src/modules/buildShows.js\");\n/* harmony import */ var _modules_counters_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/counters.js */ \"./src/modules/counters.js\");\n\n\n\n\n\n\nconst itemsTitle = document.querySelector('.items-title');\nconst items = document.querySelector('.items');\n\nwindow.addEventListener('DOMContentLoaded', async () => {\n  const shows = await (0,_modules_getShows_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n  const sixShows = shows.slice(0, 6);\n\n  itemsTitle.innerHTML = `TV SHOWS (${(0,_modules_counters_js__WEBPACK_IMPORTED_MODULE_4__.showsCount)(sixShows)})`;\n  await (0,_modules_buildShows_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(sixShows, items);\n});\n\n\n//# sourceURL=webpack://leaderboard-api/./src/index.js?");
 
 /***/ }),
 
@@ -146,7 +146,27 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst buildShows = (showsList, container) => {\n  for (let i = 0; i <= showsList.length - 1; i += 1) {\n    const itemContainer = document.createElement('div');\n    itemContainer.id = `movie${showsList[i].id}`;\n\n    const img = document.createElement('img');\n    img.src = showsList[i].image.medium;\n    img.style.width = '20rem';\n    itemContainer.appendChild(img);\n\n    const titleLike = document.createElement('div');\n    const title = document.createElement('h3');\n    const likeBtn = document.createElement('i');\n    likeBtn.classList.add('bx');\n    likeBtn.classList.add('bx-heart');\n    likeBtn.classList.add('bx-sm');\n\n    title.textContent = `${showsList[i].name}`;\n\n    titleLike.style.margin = '5px';\n    titleLike.style.textAlign = 'center';\n\n    titleLike.appendChild(title);\n    titleLike.appendChild(likeBtn);\n    itemContainer.appendChild(titleLike);\n\n    const commentBtn = document.createElement('div');\n    commentBtn.innerHTML = '<button>Comment</button>';\n    itemContainer.appendChild(commentBtn);\n\n    container.appendChild(itemContainer);\n  }\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (buildShows);\n\n\n//# sourceURL=webpack://leaderboard-api/./src/modules/buildShows.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _counters_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./counters.js */ \"./src/modules/counters.js\");\n/* harmony import */ var _getInvolvement_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getInvolvement.js */ \"./src/modules/getInvolvement.js\");\n/* harmony import */ var _postInvolvement_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./postInvolvement.js */ \"./src/modules/postInvolvement.js\");\n\n\n\n\nconst buildShows = async (showsList, container) => {\n  const listOfLikes = await (0,_getInvolvement_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n  for (let i = 0; i <= showsList.length - 1; i += 1) {\n    const itemContainer = document.createElement('div');\n    itemContainer.id = `movie${showsList[i].id}`;\n\n    const img = document.createElement('img');\n    img.src = showsList[i].image.medium;\n    img.style.width = '20rem';\n    itemContainer.appendChild(img);\n\n    const titleLike = document.createElement('div');\n    titleLike.classList.add('like-wrap');\n    const title = document.createElement('h3');\n    const likeBtn = document.createElement('i');\n    const likeDisplay = document.createElement('span');\n    likeDisplay.innerHTML = '0 likes';\n\n    likeBtn.classList.add('bx');\n    likeBtn.classList.add('bx-heart');\n    likeBtn.classList.add('bx-sm');\n    likeBtn.style.cursor = 'pointer';\n\n    title.textContent = `${showsList[i].name}`;\n\n    titleLike.style.margin = '5px';\n    titleLike.style.textAlign = 'center';\n\n    titleLike.appendChild(likeBtn);\n    titleLike.appendChild(likeDisplay);\n    itemContainer.append(title, titleLike);\n\n    const commentBtn = document.createElement('div');\n    commentBtn.innerHTML = '<button>Comment</button>';\n    itemContainer.appendChild(commentBtn);\n\n    container.appendChild(itemContainer);\n\n    (0,_counters_js__WEBPACK_IMPORTED_MODULE_0__.getLikesCount)(likeBtn, listOfLikes, likeDisplay);\n\n    likeBtn.addEventListener('click', async (e) => {\n      await (0,_postInvolvement_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(e.target.id);\n      const getReq = await (0,_getInvolvement_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n      (0,_counters_js__WEBPACK_IMPORTED_MODULE_0__.getLikesCount)(e.target, getReq, likeDisplay);\n    });\n  }\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (buildShows);\n\n\n//# sourceURL=webpack://leaderboard-api/./src/modules/buildShows.js?");
+
+/***/ }),
+
+/***/ "./src/modules/counters.js":
+/*!*********************************!*\
+  !*** ./src/modules/counters.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getLikesCount\": () => (/* binding */ getLikesCount),\n/* harmony export */   \"showsCount\": () => (/* binding */ showsCount)\n/* harmony export */ });\nconst getLikesCount = (target, likesArray, likesContainer) => {\n  for (let i = 0; i <= likesArray.length - 1; i += 1) {\n    if (likesArray[i].item_id === target.id) {\n      likesContainer.innerHTML = `${likesArray[i].likes} likes`;\n    }\n  }\n};\n\nconst showsCount = (showsList) => showsList.length;\n\n\n\n\n//# sourceURL=webpack://leaderboard-api/./src/modules/counters.js?");
+
+/***/ }),
+
+/***/ "./src/modules/getInvolvement.js":
+/*!***************************************!*\
+  !*** ./src/modules/getInvolvement.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst getLikes = async () => {\n  const response = await fetch(\n    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/jOmvR28ksoZ7GUF5P2Cy/likes',\n  );\n  return response.json();\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getLikes);\n\n\n//# sourceURL=webpack://leaderboard-api/./src/modules/getInvolvement.js?");
 
 /***/ }),
 
@@ -157,6 +177,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst getShows = async () => {\n  const response = await fetch('https://api.tvmaze.com/shows');\n  return response.json();\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getShows);\n\n\n//# sourceURL=webpack://leaderboard-api/./src/modules/getShows.js?");
+
+/***/ }),
+
+/***/ "./src/modules/postInvolvement.js":
+/*!****************************************!*\
+  !*** ./src/modules/postInvolvement.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst postLikes = async (item) => {\n  const response = await fetch(\n    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/jOmvR28ksoZ7GUF5P2Cy/likes',\n    {\n      method: 'POST',\n      body: JSON.stringify({ item_id: item }),\n      headers: {\n        'Content-type': 'application/json; Charset=UTF-8',\n      },\n    },\n  );\n\n  return response.text();\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (postLikes);\n\n\n//# sourceURL=webpack://leaderboard-api/./src/modules/postInvolvement.js?");
 
 /***/ })
 
