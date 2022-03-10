@@ -17,7 +17,7 @@
 .modal-content {
   position: relative;
   background-color: #fefefe;
-  margin: auto;
+  margin: 0 10vw;
   border: 1px solid #888;
   width: 80%;
   height: 90%;
@@ -162,6 +162,7 @@
   position: relative;
   background-color: rgb(33, 31, 31);
   height: auto;
+  min-height: 100%;
 }
 
 .item-img {
@@ -183,7 +184,6 @@
   color: white;
   padding: 30px 20px 20px;
   min-height: 58vw;
-  max-height: 720px;
   overflow: hidden;
 }
 
@@ -334,4 +334,9 @@ input:not(:checked) ~ label:hover ~ label {
 
 input#r-1 ~ label {
   padding-left: 0;
+}
+
+.res-form-btn,
+.com-form-btn {
+  background-color: white;
 }
