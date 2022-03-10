@@ -172,12 +172,12 @@ const insertPopup = async (
 
   // reservation event listener
   await addReservationListener(
-    "res-item",
+    'res-item',
     reservationBuild,
     apiURL,
     sessionID,
     dataElement.name,
-    "res-form"
+    'res-form',
   );
 };
 
