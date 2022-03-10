@@ -78,8 +78,8 @@ const insertPopup = async (
       <ul class="com-res">
       <li class="com-res-header-container">
         <ul class="com-res-header">
-          <li class="com-header"><i class='bx bx-tada-hover bx-xs bx-message-square-dots'></i> comments <span class="com-count">3</span></li>
-          <li class="res-header"><i class='bx bx-tada-hover bx-task bx-xs' ></i> reservations <span class="com-count">4</span></li>
+          <li class="com-header"><i class='bx bx-tada-hover bx-xs bx-message-square-dots'></i> comments <span class="com-count"></span></li>
+          <li class="res-header"><i class='bx bx-tada-hover bx-task bx-xs' ></i> reservations <span class="com-count"></span></li>
         </ul>
       </li>
       <li class="com-container">
@@ -155,7 +155,7 @@ const insertPopup = async (
   starRating(stars, post, index);
 
   // insert comments
-  await commentBuild('com-item', apiURL, sessionID, dataElement.name);
+  await commentBuild('com-item', apiURL, sessionID, dataElement.name,'com-count');
 
   // insert reservations
   await reservationBuild('res-item', apiURL, sessionID, dataElement.name);
@@ -168,6 +168,7 @@ const insertPopup = async (
     sessionID,
     dataElement.name,
     'com-form',
+    'com-count',
   );
 
   // reservation event listener
