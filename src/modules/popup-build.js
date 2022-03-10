@@ -28,7 +28,7 @@ const insertPopup = async (
       </ul>
     </li>
     <li class="item-title"><a href="${dataElement.url}">${
-dataElement.name
+  dataElement.name
 }</a> </li>
     <li class="item-genres-container">
       <ul class="item-genres">
@@ -38,12 +38,12 @@ dataElement.name
       <ul class="item-details">
         <li class="started">Premiered: ${dataElement.premiered}</li>
         <li class="status">${dataElement.status} ${
-dataElement.status === 'Ended' ? `: ${dataElement.ended}` : ''
+  dataElement.status === 'Ended' ? `: ${dataElement.ended}` : ''
 }</li>
       </ul>
       <ul class="rating-container">
           <li class="item-rating"><span class="imdb">IMDB: </span><span>(${
-dataElement.rating.average / 2
+  dataElement.rating.average / 2
 }<i class="fas fa-star"></i>)</span></li>
           <li class="user-rating">
             <div class="star-rating">
@@ -141,7 +141,6 @@ dataElement.rating.average / 2
     dataElement.name,
     'com-form',
   );
-
 };
 
 export default insertPopup;
