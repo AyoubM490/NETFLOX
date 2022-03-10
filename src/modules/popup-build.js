@@ -154,7 +154,7 @@ const insertPopup = async (
   starRating(stars, post, index);
 
   // insert comments
-  await commentBuild('com-item', apiURL, sessionID, dataElement.name,'com-count');
+  await commentBuild('com-item', apiURL, sessionID, dataElement.name, 'com-count');
 
   // insert reservations
   await reservationBuild('res-item', apiURL, sessionID, dataElement.name);
