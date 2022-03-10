@@ -10,16 +10,23 @@ const popupContainer = document.querySelector('.popup');
 const modalContainer = document.querySelector('.modal-body');
 const closePopup = document.querySelector('.close');
 const modalContent = document.querySelector('.modal-content');
+const popupCloseIcon = document.querySelector('.close-icon');
 
-closePopup.addEventListener('click', () => {
-  modalContent.classList.remove('popup-animation');
-  modalContent.classList.add('popup-close-animation');
-  setTimeout(() => {
-    popupContainer.style.display = 'none';
-    modalContent.classList.remove('popup-close-animation');
-    modalContent.classList.add('popup-animation');
-  }, 500);
-});
+window.onclick = (e) => {
+  if (
+    e.target === popupContainer
+    || e.target === closePopup
+    || e.target === popupCloseIcon
+  ) {
+    modalContent.classList.remove('popup-animation');
+    modalContent.classList.add('popup-close-animation');
+    setTimeout(() => {
+      popupContainer.style.display = 'none';
+      modalContent.classList.remove('popup-close-animation');
+      modalContent.classList.add('popup-animation');
+    }, 500);
+  }
+};
 
 window.addEventListener('DOMContentLoaded', async () => {
   const shows = await getShows();
