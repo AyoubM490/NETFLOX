@@ -68,11 +68,6 @@ const insertPopup = (popupContainer, modalContainer, dataArray, index) => {
       alt="show-poster"
     />
   </li>`;
-  const genresContainner = document.querySelector('.item-genres');
-
-  dataElement.genres.forEach((element) => {
-    genresContainner.innerHTML += `<li class="genre">${element}</li>`;
-  });
 
   modalContainer.appendChild(modal);
   popupContainer.style.display = 'block';
@@ -83,6 +78,11 @@ const insertPopup = (popupContainer, modalContainer, dataArray, index) => {
     const selectedStar = document.querySelector(`#${getStars(index)}`);
     selectedStar.checked = true;
   }
+
+  const genresContainner = document.querySelector('.item-genres');
+  dataElement.genres.forEach((element) => {
+    genresContainner.innerHTML += `<li class="genre">${element}</li>`;
+  });
   starRating(stars, post, index);
 };
 
