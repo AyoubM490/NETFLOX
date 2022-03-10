@@ -31,12 +31,13 @@ const buildShows = async (showsList, container) => {
     titleLike.style.margin = '5px';
     titleLike.style.textAlign = 'center';
 
+    titleLike.appendChild(title);
     titleLike.appendChild(likeBtn);
     titleLike.appendChild(likeDisplay);
     itemContainer.append(title, titleLike);
 
     const commentBtn = document.createElement('div');
-    commentBtn.innerHTML = '<button>Comment</button>';
+    commentBtn.innerHTML = `<button class="comment-btn" item="${showsList[i].id}">Comment</button>`;
     itemContainer.appendChild(commentBtn);
 
     container.appendChild(itemContainer);
