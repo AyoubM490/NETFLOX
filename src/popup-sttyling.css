@@ -322,17 +322,17 @@
   display: none;
 }
 
-input:checked ~ label {
+input:checked ~ .staring-label {
   color: #fd4;
   text-shadow: 0 0 20px #fd4;
 }
 
-input:not(:checked) ~ label:hover,
-input:not(:checked) ~ label:hover ~ label {
+input:not(:checked) ~ .staring-label:hover,
+input:not(:checked) ~ .staring-label:hover ~ .staring-label {
   color: rgb(255, 68, 93);
 }
 
-input#r-1 ~ label {
+input#r-1 ~ .staring-label {
   padding-left: 0;
 }
 

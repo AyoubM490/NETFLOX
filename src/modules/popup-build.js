@@ -23,7 +23,6 @@ const insertPopup = async (
       <li class="company-likes-container">
         <ul class="company-likes">
             <li class="likes">
-                <i class="bx bx-heart bx-xs bx-burst-hover"></i>
               </li>
             <li class="company">${dataElement.network.name}</li>
 
@@ -57,15 +56,15 @@ const insertPopup = async (
                 <div class="stars-container" item="${index}">
                     <p class="user-review">Your review:</p>
                   <input type="radio" name="rating" id="r-5" />
-                  <label for="r-5" class="fas fa-star"></label>
+                  <label for="r-5" class="fas fa-star staring-label"></label>
                   <input type="radio" name="rating" id="r-4" />
-                  <label for="r-4" class="fas fa-star"></label>
+                  <label for="r-4" class="fas fa-star staring-label"></label>
                   <input type="radio" name="rating" id="r-3" />
-                  <label for="r-3" class="fas fa-star"></label>
+                  <label for="r-3" class="fas fa-star staring-label"></label>
                   <input type="radio" name="rating" id="r-2" />
-                  <label for="r-2" class="fas fa-star"></label>
+                  <label for="r-2" class="fas fa-star staring-label"></label>
                   <input type="radio" name="rating" id="r-1" />
-                  <label for="r-1" class="fas fa-star"></label>
+                  <label for="r-1" class="fas fa-star staring-label"></label>
                 </div>
               </div>
             </li>
@@ -79,7 +78,7 @@ const insertPopup = async (
       <li class="com-res-header-container">
         <ul class="com-res-header">
           <li class="com-header"><i class='bx bx-tada-hover bx-xs bx-message-square-dots'></i> comments <span class="com-count"></span></li>
-          <li class="res-header"><i class='bx bx-tada-hover bx-task bx-xs' ></i> reservations <span class="com-count"></span></li>
+          <li class="res-header"><i class='bx bx-tada-hover bx-task bx-xs' ></i> reservations <span class="res-count"></span></li>
         </ul>
       </li>
       <li class="com-container">
