@@ -36,6 +36,5 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   itemsTitle.innerHTML = `TV SHOWS (${showsCount(sixShows)})`;
   await buildShows(sixShows, items);
-  buildShows(sixShows, items);
   itemListener(popupContainer, modalContainer, sixShows, 'comment-btn');
 });
