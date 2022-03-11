@@ -154,12 +154,13 @@ const insertPopup = async (
   starRating(stars, post, index);
 
   const commentCount = document.querySelector('.com-count');
+  const reservationCount = document.querySelector('.res-count');
 
   // insert comments
   await commentBuild('com-item', apiURL, sessionID, dataElement.name, commentCount);
 
   // insert reservations
-  await reservationBuild('res-item', apiURL, sessionID, dataElement.name);
+  await reservationBuild('res-item', apiURL, sessionID, dataElement.name, reservationCount);
 
   // comment event listener
   await addCommentListener(
@@ -180,6 +181,7 @@ const insertPopup = async (
     sessionID,
     dataElement.name,
     'res-form',
+    reservationCount,
   );
 };
 
