@@ -25,7 +25,6 @@ const insertPopup = async (
             <li class="likes">
               </li>
             <li class="company">${dataElement.network.name}</li>
-
         </ul>
       </li>
       <li class="item-title"><a href="${dataElement.url}">${
