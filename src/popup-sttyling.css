@@ -340,3 +340,51 @@ input#r-1 ~ .staring-label {
 .com-form-btn {
   background-color: white;
 }
+
+.com-res-container {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.com-res{
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+}
+
+.com-res-header-container {
+  padding: 0 10px;
+}
+
+.com-res-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.likes-header, .com-header, .res-header {
+  font-size: 13px;
+  border-bottom: 1px solid #EAEAEA;
+  padding: 5px 20px 0 0;
+}
+
+.bx.bxs-heart.bx-xs {
+  color: #EAEAEA;
+}
+
+.add-com-res {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.add-com-btn, .add-res-btn {
+  background: #FF2E63;
+  color: #252A34;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 6px;
+  margin: 5px 10px 0 0;
+  border-radius: 6px;
+}

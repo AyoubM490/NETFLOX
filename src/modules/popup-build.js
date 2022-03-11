@@ -77,8 +77,14 @@ const insertPopup = async (
       <ul class="com-res">
       <li class="com-res-header-container">
         <ul class="com-res-header">
-          <li class="com-header"><i class='bx bx-tada-hover bx-xs bx-message-square-dots'></i> comments <span class="com-count"></span></li>
-          <li class="res-header"><i class='bx bx-tada-hover bx-task bx-xs' ></i> reservations <span class="res-count"></span></li>
+          <li class="likes-header"><span class="likes-count"></span> <i class='bx bxs-heart bx-xs bx-burst-hover'></i></li>
+          <li class="com-header"><span class="com-count"></span> comments </li>
+          <li class="res-header"><span class="res-count"></span> reservations </li>
+        </ul>
+        <ul class="add-com-res">
+
+          <li class="add-com-header"><button type="button" class="add-com-btn">add comment</button></li>
+          <li class="add-res-header"><button type="button" class="add-res-btn">add reservation</button></li>
         </ul>
       </li>
       <li class="com-container">
