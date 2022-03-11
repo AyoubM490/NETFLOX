@@ -1,5 +1,5 @@
 import getreservations from './get-reservations.js';
-import reservationCount from "./reservation-count.js"
+import reservationCount from './reservation-count.js';
 
 const reservationBuild = async (containerClass, url, id, itemID, reservationContainer) => {
   const container = document.querySelector(`.${containerClass}`);
@@ -8,9 +8,9 @@ const reservationBuild = async (containerClass, url, id, itemID, reservationCont
 
   if (data.length === 0) {
     container.innerHTML = '<span class="res-item-default">no reservations history!</span>';
-    reservationCount(reservationContainer, [])
+    reservationCount(reservationContainer, []);
   } else {
-    reservationCount(reservationContainer, data)
+    reservationCount(reservationContainer, data);
     container.innerHTML = '';
     data.forEach((item) => {
       const div = document.createElement('div');

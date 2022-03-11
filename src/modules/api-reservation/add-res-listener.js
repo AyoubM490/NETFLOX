@@ -1,4 +1,4 @@
-import postreservation from "./post-reservation.js";
+import postreservation from './post-reservation.js';
 
 const addReservationListener = (
   containerClass,
@@ -7,10 +7,10 @@ const addReservationListener = (
   id,
   itemID,
   formClass,
-  reservationContainer
+  reservationContainer,
 ) => {
   const form = document.querySelector(`.${formClass}`);
-  form.addEventListener("submit", async (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const name = event.target[0].value;
     const startDate = event.target[1].value;
@@ -21,7 +21,7 @@ const addReservationListener = (
       url,
       id,
       itemID,
-      reservationContainer
+      reservationContainer,
     );
   });
 };

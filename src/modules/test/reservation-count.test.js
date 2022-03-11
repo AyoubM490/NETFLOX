@@ -1,4 +1,4 @@
-import reservationCount from "../api-reservation/reservation-count.js"
+import reservationCount from '../api-reservation/reservation-count.js';
 
 const dataArray = [1, 2];
 const item = document.createElement('div');
