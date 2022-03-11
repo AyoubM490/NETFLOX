@@ -1,5 +1,4 @@
-const commentCount = (commentContainerClass, arr) => {
-  const commentContainer = document.querySelector(`.${commentContainerClass}`);
+const commentCount = (commentContainer, arr) => {
   const count = arr.length;
   commentContainer.innerHTML = count;
 };

@@ -1,16 +1,16 @@
 import getcomments from './get-comments.js';
 import commentCount from './comment-count.js';
 
-const commentBuild = async (containerClass, url, id, itemID, commentCountContainerClass) => {
+const commentBuild = async (containerClass, url, id, itemID, commentCountContainer) => {
   const container = document.querySelector(`.${containerClass}`);
 
   const data = await getcomments(url, id, itemID);
 
   if (data.length === 0 || data.length === undefined) {
     container.innerHTML = '<span class="com-item-default">no comment history!</span>';
-    commentCount(commentCountContainerClass, []);
+    commentCount(commentCountContainer, []);
   } else {
-    commentCount(commentCountContainerClass, data);
+    commentCount(commentCountContainer, data);
     container.innerHTML = '';
     data.forEach((item) => {
       const div = document.createElement('div');

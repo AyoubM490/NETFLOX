@@ -7,7 +7,7 @@ const addCommentListener = (
   id,
   itemID,
   formClass,
-  commentContainerClass,
+  commentContainer,
 ) => {
   const form = document.querySelector(`.${formClass}`);
   form.addEventListener('submit', async (event) => {
@@ -20,7 +20,7 @@ const addCommentListener = (
       url,
       id,
       itemID,
-      commentContainerClass,
+      commentContainer,
     );
   });
 };
