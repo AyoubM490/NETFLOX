@@ -4,7 +4,7 @@
 
 > NETFLOX is a web application based on an external - here the TV Maze API. The API provides data about TV Shows. We then built the webapp around it. The webapp has 2 user interfaces (pages): The Homepage and the Comment modal. On the Homepage, a list of 6 TV Shows are present, each Show can be `liked` and commented on.
 
-![image](https://user-images.githubusercontent.com/95053734/157826582-384849e6-6dd5-489f-860e-5872127c1a44.png)
+![screenshot](./src/assets/images/scrnsht.png)
 
 ## Built With
 
@@ -13,9 +13,11 @@
 - Jest
 
 ## Demo Presentation
+
 For a demo presentation please visit this [link](https://drive.google.com/file/d/1MhHWGp7qNawExu1sP-Odo4PGh5FPm4X9/view?usp=sharing)
 
 ## Live Demo
+
 Visit the live demo [here](https://ayoubms.github.io/api-capstone-project)
 
 ## Getting Started
