@@ -18,7 +18,7 @@ For a demo presentation please visit this [link](https://drive.google.com/file/d
 
 ## Live Demo
 
-Visit the live demo [here](https://ayoubms.github.io/api-capstone-project)
+Visit the live demo [here](https://ayoubms.github.io/NETFLOX/)
 
 ## Getting Started
 
